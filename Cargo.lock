@@ -3,7 +3,7 @@
 version = 3
 
 [[package]]
-name = "get-interface"
+name = "get-wireguard-status"
 version = "0.1.0"
 dependencies = [
  "serde",
