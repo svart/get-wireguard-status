@@ -37,7 +37,6 @@ fn main() {
 
     if connected.is_empty() {
         println!("ᚷ Disconnected");
-        return;
     } else {
         println!("🔒 {}", connected.join(" "));
     }
