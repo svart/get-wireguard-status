@@ -1,5 +1,4 @@
 use std::collections::HashMap;
-use std::str;
 use std::process::Command;
 
 use serde::Deserialize;
@@ -19,9 +18,7 @@ fn main() {
         .output()
         .expect("failed to get interfaces");
 
-    let interfaces = str::from_utf8(&cmd_result.stdout).unwrap();
-
-    let iface_list: Vec<Interface> = serde_json::from_str(interfaces).unwrap();
+    let iface_list: Vec<Interface> = serde_json::from_slice(&cmd_result.stdout).unwrap();
 
     let mut connected = Vec::new();
 
